@@ -33,4 +33,4 @@ then
     pm2 restart $PM2_NAME
 fi
 
-printf -v date '%(%Y-%m-%d %H:%M:%S)T\n' -1 >> /var/log/checkgit
+printf -v date '%(%Y-%m-%d %H:%M:%S)T\n' -1 >> ~/Desktop/checkgit.log

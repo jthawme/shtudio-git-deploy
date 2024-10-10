@@ -11,13 +11,13 @@ BRANCH=${4:-main}
 
 if [ -z "${LOCAL_REPO}" ];
 then
-    printf '%s\n' "No local repo assigned" >&2  # write error message to stderr
+    echo "No local repo assigned" | tee -a /tmp/checkgit.log
     exit 1 
 fi
 
 if [ -z "${PM2_NAME}" ];
 then
-    printf '%s\n' "No pm2 name assigned" >&2  # write error message to stderr
+    echo "No pm2 name assigned" | tee -a /tmp/checkgit.log
     exit 1 
 fi
 
@@ -33,4 +33,4 @@ then
     pm2 restart $PM2_NAME
 fi
 
-date >> ~/Desktop/checkgit.log
+date >> /tmp/checkgit.log

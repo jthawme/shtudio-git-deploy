@@ -24,9 +24,6 @@ fi
 LATEST_REMOTE=$(git ls-remote $GIT_REPO HEAD | cut -f1)
 LATEST_LOCAL=$(git --git-dir $LOCAL_REPO rev-parse HEAD);
 
-echo $LATEST_REMOTE
-echo $LATEST_LOCAL
-
 if [[ "$LATEST_REMOTE" != "$LATEST_LOCAL" ]];
 then
     # Commits dont match so presume there is new delicious content
@@ -35,3 +32,5 @@ then
     npm --prefix $LOCAL_FOLDER ci $LOCAL_FOLDER
     pm2 restart $PM2_NAME
 fi
+
+printf -v date '%(%Y-%m-%d %H:%M:%S)T\n' -1 >> /var/log/checkgit

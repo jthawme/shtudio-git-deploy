@@ -3,11 +3,11 @@
 # A little script ideally run in a crontab to pull new git content
 # stop a pm2 process and restart it after
 
-GIT_REPO="git@github.com:jthawme/shtudio-graphing.git"
-LOCAL_FOLDER="$1"
+GIT_REPO="$1"
+LOCAL_FOLDER="$2"
 LOCAL_REPO="${LOCAL_FOLDER}/.git"
-PM2_NAME=$2
-BRANCH=${3:-main}
+PM2_NAME=$3
+BRANCH=${4:-main}
 
 if [ -z "${LOCAL_REPO}" ];
 then

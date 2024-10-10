@@ -29,7 +29,7 @@ then
     echo "New changes, running" | tee -a /tmp/checkgit.log
     # Commits dont match so presume there is new delicious content
     pm2 stop $PM2_NAME
-    git --git-dir $LOCAL_REPO pull origin $BRANCH
+    git -C $LOCAL_FOLDER pull origin $BRANCH
     npm --prefix $LOCAL_FOLDER ci $LOCAL_FOLDER
     pm2 restart $PM2_NAME
     echo "New changes finished" | tee -a /tmp/checkgit.log

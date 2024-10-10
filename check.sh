@@ -30,9 +30,8 @@ echo $LATEST_LOCAL
 if [[ "$LATEST_REMOTE" != "$LATEST_LOCAL" ]];
 then
     # Commits dont match so presume there is new delicious content
-    echo "COOL"
     pm2 stop $PM2_NAME
     git --git-dir $LOCAL_REPO pull origin $BRANCH
-    npm --prefix LOCAL_FOLDER ci LOCAL_FOLDER
+    npm --prefix $LOCAL_FOLDER ci $LOCAL_FOLDER
     pm2 restart $PM2_NAME
 fi

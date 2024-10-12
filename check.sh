@@ -9,7 +9,13 @@ LOCAL_REPO="${LOCAL_FOLDER}/.git"
 PM2_NAME=$3
 BRANCH=${4:-main}
 
-if [ -z "${LOCAL_REPO}" ];
+if [ -z "${GIT_REPO}" ];
+then
+    echo "No git repo assigned"
+    exit 1 
+fi
+
+if [ -z "${LOCAL_FOLDER}" ];
 then
     echo "No local repo assigned"
     exit 1 

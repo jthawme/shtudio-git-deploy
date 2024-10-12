@@ -11,4 +11,4 @@ export NVM_DIR="$HOME/.nvm"
 /usr/bin/keychain $HOME/.ssh/id
 source $HOME/.keychain/${HOSTNAME}-sh
 
-./check.sh
+./check.sh "$@"

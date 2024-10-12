@@ -32,8 +32,7 @@ LATEST_LOCAL=$(git --git-dir $LOCAL_REPO rev-parse HEAD);
 
 
 echo "LATEST REMOTE $LATEST_REMOTE" | tee -a "/tmp/debug.log"
-echo "LATEST LOCAL $LATEST_LOCAL"
- | tee -a "/tmp/debug.log"
+echo "LATEST LOCAL $LATEST_LOCAL" | tee -a "/tmp/debug.log"
 
 if [[ "$LATEST_REMOTE" != "$LATEST_LOCAL" ]];
 then

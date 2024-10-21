@@ -23,3 +23,11 @@ crontab -e
 # * * * * * SCRIPT_LOCATION REMOTE_REPO_URL LOCAL_FOLDER PM2_NAME [BRANCH_NAME] [> OUTPUT_FILE 2>&1]
 * * * * * $HOME/Desktop/shtudio-git-deploy/cron.sh git@github.com:jthawme/shtudio-dashboard.git $HOME/Desktop/shtudio-dashboard/ dashboard > /tmp/cron.log 2>&1
 ```
+
+## Vite PM2
+
+A use case of starting a vite style dev server
+
+```
+BROWSER=/usr/bin/chromium-browser BROWSER_ARGS=--kiosk pm2 start npm --name "app name" -- dev --open
+```
